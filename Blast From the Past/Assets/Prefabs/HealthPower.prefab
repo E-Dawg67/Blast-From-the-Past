@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7777297277208000307}
   - component: {fileID: 3622544052176776812}
   - component: {fileID: 6472474682552122240}
+  - component: {fileID: 2763036739797392360}
   m_Layer: 0
   m_Name: HealthPower
   m_TagString: Untagged
@@ -126,3 +127,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PowerDespawn
   lifeTime: 10
+--- !u!114 &2763036739797392360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6633000374052370859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91201a1100c869b40ad614896cfb6767, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HealthPowerUp

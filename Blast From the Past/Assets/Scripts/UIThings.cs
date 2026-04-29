@@ -6,6 +6,8 @@ public class UIThings : MonoBehaviour
 {
     float timer = 90f;
     public TextMeshProUGUI timerText;
+    int health = 5;
+    public TextMeshProUGUI healthText;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -19,10 +21,17 @@ public class UIThings : MonoBehaviour
         int minutes = Mathf.FloorToInt(timer / 60);
         int seconds = Mathf.FloorToInt(timer % 60);
         timerText.text = "Recharged In: "+ string.Format("{0:00}:{1:00}", minutes, seconds);
+
+        healthText.text = "Health: " + health;
     }
 
     public void ReduceTime(float amount)
     {
         timer -= amount;
+    }
+
+    public void Heal()
+    {
+        health++;
     }
 }

@@ -2,15 +2,19 @@ using UnityEngine;
 
 public class HealthPowerUp : MonoBehaviour
 {
+    UIThings health;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        health = FindAnyObjectByType<UIThings>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter(Collider other)
     {
-        
+        if (other.CompareTag("Player"))
+        {
+            health.Heal();
+            Destroy(gameObject);
+        }
     }
 }
