@@ -119,6 +119,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &779284612 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1678319595996429793, guid: fbb17b34c7044774ea304f95dcb8f7fd, type: 3}
+  m_PrefabInstance: {fileID: 781485460726990271}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1 &1107681013
 GameObject:
   m_ObjectHideFlags: 0
@@ -460,6 +471,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!114 &2020253290 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2926110786191917345, guid: fbb17b34c7044774ea304f95dcb8f7fd, type: 3}
+  m_PrefabInstance: {fileID: 781485460726990271}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1001 &781485460726990271
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -570,6 +592,10 @@ PrefabInstance:
       value: GameManager
       objectReference: {fileID: 0}
     - target: {fileID: 6181184759739555882, guid: 72a5f2956b68b9b4e923058c0ddf1fcd, type: 3}
+      propertyPath: ammoText
+      value: 
+      objectReference: {fileID: 779284612}
+    - target: {fileID: 6181184759739555882, guid: 72a5f2956b68b9b4e923058c0ddf1fcd, type: 3}
       propertyPath: timerText
       value: 
       objectReference: {fileID: 1987676099}
@@ -577,6 +603,10 @@ PrefabInstance:
       propertyPath: healthText
       value: 
       objectReference: {fileID: 1457346449}
+    - target: {fileID: 6181184759739555882, guid: 72a5f2956b68b9b4e923058c0ddf1fcd, type: 3}
+      propertyPath: bossHealthText
+      value: 
+      objectReference: {fileID: 2020253290}
     - target: {fileID: 7868373874033812087, guid: 72a5f2956b68b9b4e923058c0ddf1fcd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
