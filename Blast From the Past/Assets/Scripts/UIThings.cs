@@ -7,7 +7,7 @@ public class UIThings : MonoBehaviour
     float timer = 90f;
     public TextMeshProUGUI timerText;
 
-    int health = 5;
+    public int health = 5;
     public TextMeshProUGUI healthText;
 
     // Matthew: So basically there is ammo and boss health variables here, when scripts for shooting with ammo and boss health are added in
