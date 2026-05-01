@@ -30,7 +30,7 @@ public class EnemyShooter : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            GameObject.Find("GameManager").GetComponent<UIThings>().health--;
+            GameObject.Find("GameManager").GetComponent<UIThings>().health -= -5;
         }
     }
 }

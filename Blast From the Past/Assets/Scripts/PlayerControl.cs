@@ -1,8 +1,9 @@
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.LowLevel;
-
+using System.Collections;
 public class PlayerControl : MonoBehaviour
 {
     float x, y, prevUP;
@@ -10,7 +11,9 @@ public class PlayerControl : MonoBehaviour
     public GameObject collided;
     private Rigidbody rb;
     private bool jump = true;
-
+    public Animator swordAnimator;
+    public GameObject sword, bullet;
+    public Transform spawnPoint;
     void Start()
     {
         Cursor.visible = false;
@@ -24,6 +27,24 @@ public class PlayerControl : MonoBehaviour
         if (Keyboard.current.spaceKey.wasPressedThisFrame && jump)
         {
             rb.linearVelocity = new Vector3(this.gameObject.GetComponent<Rigidbody>().linearVelocity.x, 5f, this.gameObject.GetComponent<Rigidbody>().linearVelocity.z);
+        }
+        if (Input.GetMouseButtonDown(1))
+        {
+            StartCoroutine(PerformSlash());
+        }
+        if (Keyboard.current.spaceKey.wasPressedThisFrame && jump)
+        {
+            rb.linearVelocity = new Vector3(this.gameObject.GetComponent<Rigidbody>().linearVelocity.x, 15f, this.gameObject.GetComponent<Rigidbody>().linearVelocity.z);
+        }
+        if (Input.GetMouseButtonDown(0) && GameObject.Find("GameManager").GetComponent<UIThings>().currentAmmo > 0)
+        {
+            GameObject bulletClone = Instantiate(bullet, spawnPoint.position, spawnPoint.rotation);
+            GameObject.Find("GameManager").GetComponent<UIThings>().currentAmmo--;
+        }
+        if (Keyboard.current.rKey.wasPressedThisFrame)
+        {
+            GameObject.Find("GameManager").GetComponent<UIThings>().currentAmmo = 0;
+            Invoke("reload", 3f);
         }
     }
 
@@ -43,5 +64,17 @@ public class PlayerControl : MonoBehaviour
             jump = true;
             collided = other.gameObject;
         }
+    }
+    private IEnumerator PerformSlash()
+    {
+        swordAnimator.SetBool("swing", true);
+        sword.GetComponent<BoxCollider>().enabled = true;
+        yield return new WaitForSeconds(1f);
+        sword.GetComponent<BoxCollider>().enabled = false;
+        swordAnimator.SetBool("swing", false);
+    }
+    private void reload()
+    {
+        GameObject.Find("GameManager").GetComponent<UIThings>().currentAmmo = 30;
     }
 }
